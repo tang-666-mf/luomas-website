@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Luomas Power Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 8px; }
+        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
+        .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
+        
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 18px; opacity: 0.9; }
+        
+        .team-section { padding: 100px 0; }
+        .section-title { text-align: center; margin-bottom: 70px; }
+        .section-title h2 { font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
+        .section-title p { color: #64748b; font-size: 18px; }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 100px;
+        }
+        
+        .team-card {
+                background: white;
+                padding: 50px 40px;
+                border-radius: 24px;
+                text-align: center;
+                box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+                transition: all 0.3s;
+            }
+            
+            .team-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+            .team-card .avatar {
+                width: 140px;
+                height: 140px;
+                margin: 0 auto 30px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 42px;
+                font-weight: 800;
+                object-fit: cover;
+                box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3);
+                border: 4px solid #3b82f6;
+            }
+            
+            .team-card h3 { font-size: 26px; margin-bottom: 8px; color: #0f172a; }
+            .team-card .role { color: #3b82f6; font-weight: 600; margin-bottom: 20px; font-size: 16px; }
+            .team-card p { color: #64748b; font-size: 15px; line-height: 1.7; margin-bottom: 25px; }
+            
+            .team-card .social-links {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .team-card .social-links a {
+                width: 40px;
+                height: 40px;
+                background: #f1f5f9;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #64748b;
+                transition: all 0.3s;
+            }
+            
+            .team-card .social-links a:hover {
+                background: #3b82f6;
+                color: white;
+            }
+        
+        .values-section { 
+            padding: 100px 0; 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        
+        .value-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .value-card .icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 25px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .value-card p {
+            color: rgba(255,255,255,0.7);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .team-grid { grid-template-columns: 1fr; }
+            .task-table { font-size: 14px; }
+            .task-table th, .task-table td { padding: 15px; }
+            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #0f172a; flex-direction: column; padding: 20px; gap: 10px; }
+            .nav-links.active { display: flex; }
+            .nav-links a { padding: 12px 20px; text-align: center; }
+            .mobile-menu-btn { display: block; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
+                <span>LUOMAS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="rd.html">R&D</a></li>
+                <li><a href="company.html">Company</a></li>
+                <li><a href="service.html">Support</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="team.html" class="active">Team</a></li>
+            </ul>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Team</h1>
+            <p>Meet the talented individuals driving Luomas forward</p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Team Members</h2>
+                <p>Our leadership team with diverse expertise and passion</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20business%20man%20portrait%20headshot%20confident%20smile%20wearing%20suit%20corporate%20style%20clean%20background&image_size=square_hd" alt="Tang Mingfan" class="avatar">
+                    <h3>Tang Mingfan</h3>
+                    <div class="role">Project Manager</div>
+                    <p>Responsible for overall project planning, timeline management, and team coordination. Ensures seamless execution of all initiatives.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20technology%20expert%20portrait%20headshot%20confident%20wearing%20casual%20business%20attire%20clean%20background&image_size=square_hd" alt="Qin Jixiang" class="avatar">
+                    <h3>Qin Jixiang</h3>
+                    <div class="role">Technical Director</div>
+                    <p>Leading technology architecture design and core development. Expert in fast charging technology and battery management systems.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20software%20developer%20portrait%20headshot%20friendly%20smile%20modern%20casual%20style%20clean%20background&image_size=square_hd" alt="Rong Jinyu" class="avatar">
+                    <h3>Rong Jinyu</h3>
+                    <div class="role">Frontend Developer</div>
+                    <p>Implementing responsive web design and interactive features. Specializes in creating seamless user experiences across all devices.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20creative%20designer%20portrait%20headshot%20artistic%20style%20friendly%20smile%20clean%20background&image_size=square_hd" alt="Chen Dongxia" class="avatar">
+                    <h3>Chen Dongxia</h3>
+                    <div class="role">UI/UX Designer</div>
+                    <p>Creating intuitive user interfaces and visual designs. Passionate about delivering exceptional user experiences and brand consistency.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20content%20writer%20portrait%20headshot%20elegant%20style%20confident%20smile%20clean%20background&image_size=square_hd" alt="Lu Yanping" class="avatar">
+                    <h3>Lu Yanping</h3>
+                    <div class="role">Content Strategist</div>
+                    <p>Developing brand messaging and product content. Expert in crafting compelling narratives that resonate with global audiences.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://neeko-copilot.bytedance.net/api/text2image?prompt=professional%20asian%20quality%20assurance%20expert%20portrait%20headshot%20professional%20style%20confident%20clean%20background&image_size=square_hd" alt="Zhang Yiming" class="avatar">
+                    <h3>Zhang Yiming</h3>
+                    <div class="role">QA & Operations</div>
+                    <p>Ensuring product quality and managing deployment operations. Committed to delivering reliable and high-performance solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team Values</h2>
+                <p>Core principles that guide our work and collaboration</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon"><i class="fas fa-target"></i></div>
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries and explore new technologies to deliver cutting-edge solutions for our customers.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <h3>Collaboration</h3>
+                    <p>Teamwork is at the heart of everything we do. We believe diverse perspectives drive better outcomes.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon"><i class="fas fa-heart"></i></div>
+                    <h3>Passion</h3>
+                    <p>We are passionate about creating products that enhance people's digital lives and make a positive impact.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon"><i class="fas fa-award"></i></div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every detail, ensuring the highest quality standards in all our deliverables.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Creativity</h3>
+                    <p>We embrace creative thinking to solve complex problems and deliver unique, user-centric solutions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Trust</h3>
+                    <p>We build trust through transparency, reliability, and delivering on our promises to customers and team members.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

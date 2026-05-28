@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - Luomas Power Bank</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 8px; }
+        .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
+        .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
+        
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 18px; opacity: 0.9; }
+        
+        .filter-section { padding: 60px 0; background: white; text-align: center; }
+        
+        .filter-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 12px 32px;
+            border: 2px solid #3b82f6;
+            background: transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            color: #3b82f6;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 15px;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: #3b82f6;
+            color: white;
+        }
+        
+        .products-section { padding: 80px 0; }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .product-card img { width: 100%; height: 300px; object-fit: cover; }
+        .product-info { padding: 35px; }
+        .product-info .badge { display: inline-block; padding: 6px 16px; background: #dbeafe; color: #3b82f6; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
+        .product-info h3 { font-size: 26px; margin-bottom: 12px; color: #0f172a; }
+        .product-info p { color: #64748b; font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
+        .specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; padding: 20px; background: #f8fafc; border-radius: 12px; }
+        .spec-item { text-align: center; }
+        .spec-item i { font-size: 20px; color: #3b82f6; margin-bottom: 8px; display: block; }
+        .spec-item span { font-size: 12px; color: #64748b; display: block; }
+        .product-price { font-size: 36px; font-weight: 700; color: #3b82f6; margin-bottom: 20px; }
+        .buy-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
+        
+        .features-section { padding: 100px 0; background: white; }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 40px;
+            background: #f8fafc;
+            border-radius: 20px;
+        }
+        
+        .feature-item i { font-size: 48px; color: #3b82f6; margin-bottom: 20px; }
+        .feature-item h3 { font-size: 22px; margin-bottom: 15px; color: #0f172a; }
+        .feature-item p { color: #64748b; }
+        
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+        
+        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+        
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #0f172a; flex-direction: column; padding: 20px; gap: 10px; }
+            .nav-links.active { display: flex; }
+            .nav-links a { padding: 12px 20px; text-align: center; }
+            .mobile-menu-btn { display: block; }
+            .products-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
+                <span>LUOMAS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="rd.html">R&D</a></li>
+                <li><a href="company.html">Company</a></li>
+                <li><a href="service.html">Support</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="careers.html">Careers</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>High-quality power banks designed for every charging need</p>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-btns">
+                <button class="filter-btn active" data-category="all">All Products</button>
+                <button class="filter-btn" data-category="high-capacity">High Capacity</button>
+                <button class="filter-btn" data-category="portable">Portable</button>
+                <button class="filter-btn" data-category="fast-charge">Fast Charge</button>
+                <button class="filter-btn" data-category="wireless">Wireless</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid">
+                <div class="product-card" data-category="high-capacity">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600" alt="Sense6+">
+                    <div class="product-info">
+                        <span class="badge">High Capacity</span>
+                        <h3>Sense6+</h3>
+                        <p>20000mAh high-capacity power bank with 3 USB outputs, perfect for travelers and business professionals</p>
+                        <div class="specs">
+                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>20000mAh</span></div>
+                            <div class="spec-item"><i class="fas fa-bolt"></i><span>18W Output</span></div>
+                            <div class="spec-item"><i class="fas fa-plug"></i><span>3 Ports</span></div>
+                        </div>
+                        <div class="product-price">$24.99</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="portable">
+                    <img src="https://images.unsplash.com/photo-1586816879360-004f5b0c51e5?w=600" alt="Ares10">
+                    <div class="product-info">
+                        <span class="badge">Portable</span>
+                        <h3>Ares10</h3>
+                        <p>Slim 10000mAh power bank with PD fast charging, ideal for daily commuters and students</p>
+                        <div class="specs">
+                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>10000mAh</span></div>
+                            <div class="spec-item"><i class="fas fa-bolt"></i><span>20W Output</span></div>
+                            <div class="spec-item"><i class="fas fa-plug"></i><span>2 Ports</span></div>
+                        </div>
+                        <div class="product-price">$15.99</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="high-capacity">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600" alt="PEA30">
+                    <div class="product-info">
+                        <span class="badge">High Capacity</span>
+                        <h3>PEA30</h3>
+                        <p>30000mAh ultra-high capacity with 65W output, charges laptops and multiple devices simultaneously</p>
+                        <div class="specs">
+                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>30000mAh</span></div>
+                            <div class="spec-item"><i class="fas fa-bolt"></i><span>65W Output</span></div>
+                            <div class="spec-item"><i class="fas fa-plug"></i><span>4 Ports</span></div>
+                        </div>
+                        <div class="product-price">$39.99</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="fast-charge">
+                    <img src="https://images.unsplash.com/photo-1586816879360-004f5b0c51e5?w=600" alt="Flash10">
+                    <div class="product-info">
+                        <span class="badge">Fast Charge</span>
+                        <h3>Flash10</h3>
+                        <p>10000mAh with 65W fast charging technology, charge your phone to 50% in just 30 minutes</p>
+                        <div class="specs">
+                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>10000mAh</span></div>
+                            <div class="spec-item"><i class="fas fa-bolt"></i><span>65W Output</span></div>
+                            <div class="spec-item"><i class="fas fa-plug"></i><span>2 Ports</span></div>
+                        </div>
+                        <div class="product-price">$18.99</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="portable">
+                    <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=600" alt="Mini5">
+                    <div class="product-info">
+                        <span class="badge">Portable</span>
+                        <h3>Mini5</h3>
+                        <p>Ultra-compact 5000mAh pocket-sized power bank, perfect for emergency charging on the go</p>
+                        <div class="specs">
+                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>5000mAh</span></div>
+                            <div class="spec-item"><i class="fas fa-bolt"></i><span>18W Output</span></div>
+                            <div class="spec-item"><i class="fas fa-plug"></i><span>1 Port</span></div>
+                        </div>
+                        <div class="product-price">$9.99</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="wireless">
+                    <img src="https://images.unsplash.com/photo-1586816879360-004f5b0c51e5?w=600" alt="Wireless10">
+                    <div class="product-info">
+                        <span class="badge">Wireless</span>
+                        <h3>Wireless10</h3>
+                        <p>10000mAh with 15W wireless charging, compatible with Qi-enabled devices</p>
+                        <div class="specs">
+                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>10000mAh</span></div>
+                            <div class="spec-item"><i class="fas fa-bolt"></i><span>20W Output</span></div>
+                            <div class="spec-item"><i class="fas fa-plug"></i><span>3 Ports</span></div>
+                        </div>
+                        <div class="product-price">$15.99</div>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>12-Month Warranty</h3>
+                    <p>All products come with comprehensive warranty coverage</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Free Shipping</h3>
+                    <p>Free worldwide shipping on orders over $50</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-undo"></i>
+                    <h3>30-Day Returns</h3>
+                    <p>Hassle-free return policy for your peace of mind</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.getAttribute('data-category');
+                
+                productCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
