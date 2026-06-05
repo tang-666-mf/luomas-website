@@ -1,4 +1,4 @@
-# 🚀 Luomas Website Deployment Guide
+# 🚀 ROMOSS Website Deployment Guide
 
 ## 🔥 One-Click Deployment to GitHub Pages
 
@@ -10,7 +10,7 @@ Follow these **step-by-step instructions** to get your website live!
 
 - A GitHub account (free)
 - Internet connection
-- All website files ready in `d:\luomas\luomas-en\`
+- All website files ready in `d:\luomas\romoss-en\`
 
 ---
 
@@ -32,8 +32,8 @@ Follow these **step-by-step instructions** to get your website live!
 1. After logging in, click the **+** icon in the top-right corner
 2. Select **New repository**
 3. Fill in the form:
-   - **Repository name**: `luomas-website` (exact name recommended)
-   - **Description**: `Luomas Power Bank Official Website`
+   - **Repository name**: `romoss-website` (exact name recommended)
+   - **Description**: `ROMOSS Power Bank Official Website`
    - **Public/Private**: Select **Public** (required for GitHub Pages)
    - **Initialize with README**: **Uncheck** this option
 4. Click **Create repository**
@@ -46,15 +46,15 @@ Follow these **step-by-step instructions** to get your website live!
 2. Click the link that says **uploading an existing file**
 3. On the upload page:
    - Click **Choose your files** or drag-and-drop files
-   - Select all these files from `d:\luomas\luomas-en\`:
-     - `index.html`
-     - `products.html`
-     - `rd.html`
-     - `company.html`
-     - `service.html`
-     - `news.html`
-     - `careers.html`
-     - `team.html`
+   - Select all these files from `d:\luomas\romoss-en\`:
+    - `index.html`
+    - `products.html`
+    - `rd.html`
+    - `company.html`
+    - `service.html`
+    - `news.html`
+    - `careers.html`
+    - `team.html`
 4. In the "Commit changes" section:
    - Write a commit message: `Initial website upload`
    - Keep "Commit directly to the main branch" selected
@@ -81,12 +81,12 @@ Follow these **step-by-step instructions** to get your website live!
 2. Refresh the Pages settings page
 3. You'll see a green banner with your URL:
    ```
-   Your site is live at https://YOUR_USERNAME.github.io/luomas-website/
+   Your site is live at https://YOUR_USERNAME.github.io/romoss-website/
    ```
 
 **Example:** If your GitHub username is `techmaster2024`, your URL will be:
 ```
-https://techmaster2024.github.io/luomas-website/
+https://techmaster2024.github.io/romoss-website/
 ```
 
 ---
@@ -95,14 +95,14 @@ https://techmaster2024.github.io/luomas-website/
 
 | Page | URL |
 |------|-----|
-| Homepage | `https://username.github.io/luomas-website/` |
-| Products | `https://username.github.io/luomas-website/products.html` |
-| R&D | `https://username.github.io/luomas-website/rd.html` |
-| Company | `https://username.github.io/luomas-website/company.html` |
-| Support | `https://username.github.io/luomas-website/service.html` |
-| News | `https://username.github.io/luomas-website/news.html` |
-| Careers | `https://username.github.io/luomas-website/careers.html` |
-| Team | `https://username.github.io/luomas-website/team.html` |
+| Homepage | `https://username.github.io/romoss-website/` |
+| Products | `https://username.github.io/romoss-website/products.html` |
+| R&D | `https://username.github.io/romoss-website/rd.html` |
+| Company | `https://username.github.io/romoss-website/company.html` |
+| Support | `https://username.github.io/romoss-website/service.html` |
+| News | `https://username.github.io/romoss-website/news.html` |
+| Careers | `https://username.github.io/romoss-website/careers.html` |
+| Team | `https://username.github.io/romoss-website/team.html` |
 
 ---
 

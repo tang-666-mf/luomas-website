@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Products - Luomas Power Bank</title>
+    <title>Products - Romoss Power Bank</title>
+    <meta name="description" content="Explore Romoss power bank product line - high-capacity, fast-charging portable chargers for all your devices">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        
+
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -20,126 +22,124 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         .logo { display: flex; align-items: center; gap: 12px; }
         .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
+
         nav { display: flex; justify-content: space-between; align-items: center; }
         .nav-links { display: flex; list-style: none; gap: 8px; }
         .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
         .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
-        
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+        .page-title {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            padding: 180px 0 100px;
+            padding: 140px 0 60px;
             text-align: center;
         }
-        
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
-        
-        .filter-section { padding: 60px 0; background: white; text-align: center; }
-        
-        .filter-btns {
+
+        .page-title h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-title p { font-size: 18px; opacity: 0.8; }
+
+        .filter-section {
+            padding: 40px 0;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .filters {
             display: flex;
             justify-content: center;
             gap: 15px;
             flex-wrap: wrap;
         }
-        
+
         .filter-btn {
-            padding: 12px 32px;
-            border: 2px solid #3b82f6;
-            background: transparent;
+            padding: 12px 28px;
+            border: 2px solid #e2e8f0;
+            background: white;
             border-radius: 50px;
             cursor: pointer;
-            color: #3b82f6;
-            font-weight: 600;
+            font-weight: 500;
+            color: #64748b;
             transition: all 0.3s;
-            font-size: 15px;
         }
-        
+
         .filter-btn.active, .filter-btn:hover {
-            background: #3b82f6;
-            color: white;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.05);
         }
-        
-        .products-section { padding: 80px 0; }
+
+        .products-section { padding: 60px 0; }
+
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
-        
+
         .product-card {
             background: white;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-        
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 300px; object-fit: cover; }
-        .product-info { padding: 35px; }
-        .product-info .badge { display: inline-block; padding: 6px 16px; background: #dbeafe; color: #3b82f6; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
-        .product-info h3 { font-size: 26px; margin-bottom: 12px; color: #0f172a; }
-        .product-info p { color: #64748b; font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
-        .specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 25px; padding: 20px; background: #f8fafc; border-radius: 12px; }
-        .spec-item { text-align: center; }
-        .spec-item i { font-size: 20px; color: #3b82f6; margin-bottom: 8px; display: block; }
-        .spec-item span { font-size: 12px; color: #64748b; display: block; }
-        .product-price { font-size: 36px; font-weight: 700; color: #3b82f6; margin-bottom: 20px; }
-        .buy-btn {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
-        
-        .features-section { padding: 100px 0; background: white; }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        
-        .feature-item {
-            text-align: center;
-            padding: 40px;
-            background: #f8fafc;
             border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-        
-        .feature-item i { font-size: 48px; color: #3b82f6; margin-bottom: 20px; }
-        .feature-item h3 { font-size: 22px; margin-bottom: 15px; color: #0f172a; }
-        .feature-item p { color: #64748b; }
-        
+
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .product-card img { width: 100%; height: 260px; object-fit: cover; background: #f1f5f9; }
+        .product-info { padding: 25px; }
+        .product-info h3 { font-size: 20px; margin-bottom: 10px; color: #0f172a; }
+        .product-info .capacity { color: #3b82f6; font-weight: 600; margin-bottom: 10px; }
+        .product-info p { color: #64748b; font-size: 14px; margin-bottom: 15px; line-height: 1.5; }
+        .product-price { font-size: 28px; font-weight: 700; color: #3b82f6; }
+
         footer {
             background: #0f172a;
             color: white;
-            padding: 60px 0 30px;
-            text-align: center;
+            padding: 80px 0 30px;
+            margin-top: 60px;
         }
-        
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 { color: #3b82f6; margin-bottom: 25px; font-size: 20px; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 12px; }
+        .footer-section ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: #3b82f6; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
         .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-        
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #0f172a; flex-direction: column; padding: 20px; gap: 10px; }
+            .page-title h1 { font-size: 36px; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
             .nav-links.active { display: flex; }
             .nav-links a { padding: 12px 20px; text-align: center; }
             .mobile-menu-btn { display: block; }
-            .products-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -148,7 +148,7 @@
         <nav class="container">
             <div class="logo">
                 <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
-                <span>LUOMAS</span>
+                <span>ROMOSS</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -164,21 +164,21 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="page-title">
         <div class="container">
             <h1>Our Products</h1>
-            <p>High-quality power banks designed for every charging need</p>
+            <p>Explore our comprehensive range of high-quality power banks</p>
         </div>
     </section>
 
     <section class="filter-section">
         <div class="container">
-            <div class="filter-btns">
+            <div class="filters">
                 <button class="filter-btn active" data-category="all">All Products</button>
-                <button class="filter-btn" data-category="high-capacity">High Capacity</button>
-                <button class="filter-btn" data-category="portable">Portable</button>
-                <button class="filter-btn" data-category="fast-charge">Fast Charge</button>
-                <button class="filter-btn" data-category="wireless">Wireless</button>
+                <button class="filter-btn" data-category="10000">10000mAh</button>
+                <button class="filter-btn" data-category="20000">20000mAh</button>
+                <button class="filter-btn" data-category="30000">30000mAh+</button>
+                <button class="filter-btn" data-category="fast">Fast Charging</button>
             </div>
         </div>
     </section>
@@ -186,122 +186,59 @@
     <section class="products-section">
         <div class="container">
             <div class="products-grid">
-                <div class="product-card" data-category="high-capacity">
-                    <img src="4.jpg" alt="Sense6+">
+                <div class="product-card" data-category="20000">
+                    <img src="4.jpg" alt="Romoss Sense6+ 20000mAh Power Bank" loading="lazy" decoding="async" width="400" height="300">
                     <div class="product-info">
-                        <span class="badge">High Capacity</span>
                         <h3>Sense6+</h3>
-                        <p>20000mAh high-capacity power bank with 3 USB outputs, perfect for travelers and business professionals</p>
-                        <div class="specs">
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>20000mAh</span></div>
-                            <div class="spec-item"><i class="fas fa-bolt"></i><span>18W Output</span></div>
-                            <div class="spec-item"><i class="fas fa-plug"></i><span>3 Ports</span></div>
-                        </div>
+                        <div class="capacity">20000mAh</div>
+                        <p>3 USB outputs, 2.1A fast charging, dual input design</p>
                         <div class="product-price">$24.99</div>
-                        <button class="buy-btn">Buy Now</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="portable">
-                    <img src="5.jpg" alt="Ares10">
+                <div class="product-card" data-category="10000 fast">
+                    <img src="5.jpg" alt="Romoss Ares10 10000mAh Power Bank" loading="lazy" decoding="async" width="400" height="300">
                     <div class="product-info">
-                        <span class="badge">Portable</span>
                         <h3>Ares10</h3>
-                        <p>Slim 10000mAh power bank with PD fast charging, ideal for daily commuters and students</p>
-                        <div class="specs">
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>10000mAh</span></div>
-                            <div class="spec-item"><i class="fas fa-bolt"></i><span>20W Output</span></div>
-                            <div class="spec-item"><i class="fas fa-plug"></i><span>2 Ports</span></div>
-                        </div>
+                        <div class="capacity">10000mAh</div>
+                        <p>PD3.0 fast charging, slim design, LED display</p>
                         <div class="product-price">$15.99</div>
-                        <button class="buy-btn">Buy Now</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="high-capacity">
-                    <img src="6.jpg" alt="PEA30">
+                <div class="product-card" data-category="30000 fast">
+                    <img src="6.jpg" alt="Romoss PEA30 30000mAh Power Bank" loading="lazy" decoding="async" width="400" height="300">
                     <div class="product-info">
-                        <span class="badge">High Capacity</span>
                         <h3>PEA30</h3>
-                        <p>30000mAh ultra-high capacity with 65W output, charges laptops and multiple devices simultaneously</p>
-                        <div class="specs">
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>30000mAh</span></div>
-                            <div class="spec-item"><i class="fas fa-bolt"></i><span>65W Output</span></div>
-                            <div class="spec-item"><i class="fas fa-plug"></i><span>4 Ports</span></div>
-                        </div>
+                        <div class="capacity">30000mAh</div>
+                        <p>65W PD output, laptop charging, 3-port design</p>
                         <div class="product-price">$39.99</div>
-                        <button class="buy-btn">Buy Now</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="fast-charge">
-                    <img src="7.jpg" alt="Flash10">
+                <div class="product-card" data-category="10000">
+                    <img src="7.jpg" alt="Romoss Solo5 5000mAh Power Bank" loading="lazy" decoding="async" width="400" height="300">
                     <div class="product-info">
-                        <span class="badge">Fast Charge</span>
-                        <h3>Flash10</h3>
-                        <p>10000mAh with 65W fast charging technology, charge your phone to 50% in just 30 minutes</p>
-                        <div class="specs">
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>10000mAh</span></div>
-                            <div class="spec-item"><i class="fas fa-bolt"></i><span>65W Output</span></div>
-                            <div class="spec-item"><i class="fas fa-plug"></i><span>2 Ports</span></div>
-                        </div>
-                        <div class="product-price">$18.99</div>
-                        <button class="buy-btn">Buy Now</button>
-                    </div>
-                </div>
-
-                <div class="product-card" data-category="portable">
-                    <img src="8.jpg" alt="Mini5">
-                    <div class="product-info">
-                        <span class="badge">Portable</span>
-                        <h3>Mini5</h3>
-                        <p>Ultra-compact 5000mAh pocket-sized power bank, perfect for emergency charging on the go</p>
-                        <div class="specs">
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>5000mAh</span></div>
-                            <div class="spec-item"><i class="fas fa-bolt"></i><span>18W Output</span></div>
-                            <div class="spec-item"><i class="fas fa-plug"></i><span>1 Port</span></div>
-                        </div>
+                        <h3>Solo5</h3>
+                        <div class="capacity">5000mAh</div>
+                        <p>Ultra compact, keychain design, perfect for emergencies</p>
                         <div class="product-price">$9.99</div>
-                        <button class="buy-btn">Buy Now</button>
                     </div>
                 </div>
-
-                <div class="product-card" data-category="wireless">
-                    <img src="9.jpg" alt="Wireless10">
+                <div class="product-card" data-category="20000 fast">
+                    <img src="8.jpg" alt="Romoss Zeus20 20000mAh Power Bank" loading="lazy" decoding="async" width="400" height="300">
                     <div class="product-info">
-                        <span class="badge">Wireless</span>
-                        <h3>Wireless10</h3>
-                        <p>10000mAh with 15W wireless charging, compatible with Qi-enabled devices</p>
-                        <div class="specs">
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>10000mAh</span></div>
-                            <div class="spec-item"><i class="fas fa-battery-full"></i><span>20W Output</span></div>
-                            <div class="spec-item"><i class="fas fa-plug"></i><span>3 Ports</span></div>
-                        </div>
-                        <div class="product-price">$15.99</div>
-                        <button class="buy-btn">Buy Now</button>
+                        <h3>Zeus20</h3>
+                        <div class="capacity">20000mAh</div>
+                        <p>45W fast charging, digital display, premium build</p>
+                        <div class="product-price">$32.99</div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="features-section">
-        <div class="container">
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>12-Month Warranty</h3>
-                    <p>All products come with comprehensive warranty coverage</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-shipping-fast"></i>
-                    <h3>Free Shipping</h3>
-                    <p>Free worldwide shipping on orders over $50</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-undo"></i>
-                    <h3>30-Day Returns</h3>
-                    <p>Hassle-free return policy for your peace of mind</p>
+                <div class="product-card" data-category="30000">
+                    <img src="9.jpg" alt="Romoss Sense8+ 30000mAh Power Bank" loading="lazy" decoding="async" width="400" height="300">
+                    <div class="product-info">
+                        <h3>Sense8+</h3>
+                        <div class="capacity">30000mAh</div>
+                        <p>Triple USB output, universal compatibility, large capacity</p>
+                        <div class="product-price">$34.99</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -309,7 +246,37 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Romoss</h3>
+                    <p>Romoss is a global leader in mobile charging solutions, dedicated to providing innovative and reliable power banks.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="rd.html">R&D</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="service.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +1-800-ROMOSS</p>
+                    <p><i class="fas fa-envelope"></i> info@romoss.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Romoss Technology Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
@@ -318,17 +285,17 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        const filterButtons = document.querySelectorAll('.filter-btn');
+        const filterBtns = document.querySelectorAll('.filter-btn');
         const productCards = document.querySelectorAll('.product-card');
-        
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const category = btn.getAttribute('data-category');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.dataset.category;
                 
                 productCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                    if (category === 'all' || card.dataset.category.includes(category)) {
                         card.style.display = 'block';
                     } else {
                         card.style.display = 'none';

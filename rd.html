@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R&D - Luomas Power Bank</title>
+    <title>R&D - Romoss Power Bank</title>
+    <meta name="description" content="Romoss R&D - Innovation in mobile charging technology, advanced battery solutions">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        
+
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -20,125 +22,138 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         .logo { display: flex; align-items: center; gap: 12px; }
         .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
+
         nav { display: flex; justify-content: space-between; align-items: center; }
         .nav-links { display: flex; list-style: none; gap: 8px; }
         .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
         .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
-        
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+        .page-title {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            padding: 180px 0 100px;
+            padding: 140px 0 60px;
             text-align: center;
         }
-        
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
-        
-        .tech-section { padding: 100px 0; }
-        .section-title { text-align: center; margin-bottom: 70px; }
-        .section-title h2 { font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
-        .section-title p { color: #64748b; font-size: 18px; }
-        
+
+        .page-title h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-title p { font-size: 18px; opacity: 0.8; }
+
+        .tech-section { padding: 80px 0; background: white; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; color: #0f172a; margin-bottom: 15px; }
+        .section-title p { color: #64748b; font-size: 16px; }
+
         .tech-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-bottom: 100px;
-        }
-        
-        .tech-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .tech-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .tech-img {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 30px;
-            border-radius: 24px;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
-        }
-        .tech-card h3 { font-size: 24px; margin-bottom: 20px; color: #0f172a; }
-        .tech-card p { color: #64748b; font-size: 15px; line-height: 1.7; }
-        
-        .patents { padding: 100px 0; background: white; }
-        .patents-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
+            gap: 30px;
+        }
+
+        .tech-card {
             text-align: center;
-        }
-        
-        .patent-item { padding: 40px 30px; background: #f8fafc; border-radius: 20px; }
-        .patent-item h3 { font-size: 56px; font-weight: 800; color: #3b82f6; margin-bottom: 15px; }
-        .patent-item p { color: #64748b; font-size: 16px; }
-        
-        .timeline { padding: 100px 0; }
-        .timeline-item {
-            position: relative;
-            padding-left: 50px;
-            margin-bottom: 50px;
-            border-left: 3px solid #3b82f6;
-        }
-        .timeline-item:last-child { border-left-color: transparent; }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -12px;
-            top: 0;
-            width: 20px;
-            height: 20px;
-            background: #3b82f6;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 0 3px #3b82f6;
-        }
-        .timeline-year { font-weight: 700; font-size: 24px; color: #3b82f6; margin-bottom: 10px; }
-        .timeline-content h3 { margin: 10px 0; color: #0f172a; font-size: 22px; }
-        .timeline-content p { color: #64748b; }
-        
-        .certifications { padding: 100px 0; background: white; }
-        .cert-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-        }
-        
-        .cert-item {
+            padding: 40px 25px;
             background: #f8fafc;
-            padding: 40px 50px;
             border-radius: 20px;
-            text-align: center;
-            min-width: 200px;
+            transition: all 0.3s;
+            border: 1px solid #e2e8f0;
         }
-        
-        .cert-item i { font-size: 56px; color: #3b82f6; margin-bottom: 15px; }
-        .cert-item p { font-weight: 700; color: #0f172a; font-size: 18px; }
-        
+
+        .tech-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.08); border-color: #3b82f6; }
+        .tech-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tech-card h3 { font-size: 20px; margin-bottom: 12px; color: #0f172a; }
+        .tech-card p { color: #64748b; font-size: 14px; line-height: 1.6; }
+
+        .features-section { padding: 80px 0; background: #f8fafc; }
+        .features-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .features-content img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .features-content h3 { font-size: 28px; margin-bottom: 20px; color: #0f172a; }
+        .features-content p { color: #64748b; margin-bottom: 20px; line-height: 1.7; }
+
+        .specs-section { padding: 80px 0; background: white; }
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .spec-item { padding: 30px; background: #f8fafc; border-radius: 16px; }
+        .spec-item h4 { font-size: 36px; font-weight: 700; color: #3b82f6; margin-bottom: 10px; }
+        .spec-item p { color: #64748b; font-size: 14px; }
+
+        .certifications-section { padding: 80px 0; background: linear-gradient(135deg, #0f172a, #1e293b); color: white; }
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .cert-item { padding: 25px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+        .cert-item i { font-size: 48px; color: #3b82f6; margin-bottom: 15px; }
+        .cert-item h4 { font-size: 16px; font-weight: 600; }
+
         footer {
             background: #0f172a;
             color: white;
-            padding: 60px 0 30px;
-            text-align: center;
+            padding: 80px 0 30px;
         }
-        
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 { color: #3b82f6; margin-bottom: 25px; font-size: 20px; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 12px; }
+        .footer-section ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: #3b82f6; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
         .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-        
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #0f172a; flex-direction: column; padding: 20px; gap: 10px; }
+            .page-title h1 { font-size: 36px; }
+            .features-content { grid-template-columns: 1fr; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
             .nav-links.active { display: flex; }
             .nav-links a { padding: 12px 20px; text-align: center; }
             .mobile-menu-btn { display: block; }
@@ -150,7 +165,7 @@
         <nav class="container">
             <div class="logo">
                 <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
-                <span>LUOMAS</span>
+                <span>ROMOSS</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -166,10 +181,10 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="page-title">
         <div class="container">
             <h1>Research & Development</h1>
-            <p>Innovating the future of mobile charging technology</p>
+            <p>Innovation drives us - Advanced battery technology for the future</p>
         </div>
     </section>
 
@@ -177,148 +192,135 @@
         <div class="container">
             <div class="section-title">
                 <h2>Core Technologies</h2>
-                <p>Advanced technologies powering our products</p>
+                <p>Patented innovations that power our products</p>
             </div>
             <div class="tech-grid">
                 <div class="tech-card">
-                    <img src="22.png" alt="Ultra Fast Charging" class="tech-img">
-                    <h3>Ultra Fast Charging</h3>
-                    <p>Our proprietary fast charging technology supports PD3.0/QC4.0 protocols, delivering up to 100W charging power for laptops and mobile devices. Charge your device 50% in just 30 minutes.</p>
+                    <div class="tech-icon">
+                        <img src="11.png" alt="Fast Charge Technology" loading="lazy" decoding="async" width="180" height="180">
+                    </div>
+                    <h3>Ultra Fast Charge</h3>
+                    <p>PD3.0 & QC4.0 support with intelligent charging detection</p>
                 </div>
                 <div class="tech-card">
-                    <img src="11.png" alt="Safety System" class="tech-img">
-                    <h3>9-Layer Safety System</h3>
-                    <p>Comprehensive intelligent safety protection including overcharge, over-discharge, over-voltage, short circuit, temperature control, and more. Your safety is our top priority.</p>
+                    <div class="tech-icon">
+                        <img src="22.png" alt="Smart Battery Management" loading="lazy" decoding="async" width="180" height="180">
+                    </div>
+                    <h3>Smart Battery Management</h3>
+                    <p>Intelligent power distribution for optimal charging efficiency</p>
                 </div>
                 <div class="tech-card">
-                    <img src="33.png" alt="High-Density Battery" class="tech-img">
-                    <h3>High-Density Battery</h3>
-                    <p>Advanced lithium-ion battery technology with high energy density, providing more power in a compact form factor. Premium battery cells from top-tier suppliers.</p>
+                    <div class="tech-icon">
+                        <img src="33.png" alt="Safety Protection System" loading="lazy" decoding="async" width="180" height="180">
+                    </div>
+                    <h3>9-Layer Safety Protection</h3>
+                    <p>Comprehensive protection against overcharge, overheating, and short circuit</p>
                 </div>
                 <div class="tech-card">
-                    <img src="44.png" alt="Wireless Charging" class="tech-img">
-                    <h3>Wireless Charging</h3>
-                    <p>Qi-certified wireless charging technology supporting 15W fast wireless charging for compatible devices. Foreign object detection for enhanced safety.</p>
+                    <div class="tech-icon">
+                        <img src="44.png" alt="High Density Battery" loading="lazy" decoding="async" width="180" height="180">
+                    </div>
+                    <h3>High-Density Cells</h3>
+                    <p>Premium lithium-ion cells with industry-leading energy density</p>
                 </div>
                 <div class="tech-card">
-                    <img src="55.png" alt="Smart IC Chip" class="tech-img">
-                    <h3>Smart IC Chip</h3>
-                    <p>Custom-designed smart chip that automatically detects device requirements and optimizes charging efficiency. Intelligent power distribution for multiple devices.</p>
+                    <div class="tech-icon">
+                        <img src="55.png" alt="Smart IC Chip" loading="lazy" decoding="async" width="180" height="180">
+                    </div>
+                    <h3>Intelligent IC Chip</h3>
+                    <p>Custom-designed chip for faster, safer charging</p>
                 </div>
                 <div class="tech-card">
-                    <img src="66.png" alt="Thermal Management" class="tech-img">
-                    <h3>Thermal Management</h3>
-                    <p>Advanced thermal dissipation system that keeps the device cool during high-power charging. Optimized airflow and heat sink design for reliable performance.</p>
+                    <div class="tech-icon">
+                        <img src="66.png" alt="Eco Friendly Design" loading="lazy" decoding="async" width="180" height="180">
+                    </div>
+                    <h3>Eco-Friendly Design</h3>
+                    <p>Environmentally conscious materials and manufacturing processes</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="patents">
+    <section class="features-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Intellectual Property</h2>
-                <p>Recognized innovation and technological leadership</p>
-            </div>
-            <div class="patents-grid">
-                <div class="patent-item">
-                    <h3>200+</h3>
-                    <p>Technology Patents</p>
+            <div class="features-content">
+                <div>
+                    <h3>Cutting-Edge R&D Facilities</h3>
+                    <p>Our state-of-the-art research center spans over 10,000 square meters, equipped with the latest testing equipment and staffed by over 200 engineers and scientists.</p>
+                    <p>We invest over 15% of our annual revenue into R&D, ensuring we stay at the forefront of battery technology innovation.</p>
                 </div>
-                <div class="patent-item">
-                    <h3>80+</h3>
-                    <p>International Patents</p>
-                </div>
-                <div class="patent-item">
-                    <h3>35+</h3>
-                    <p>Design Awards</p>
-                </div>
-                <div class="patent-item">
-                    <h3>25+</h3>
-                    <p>Technical Papers</p>
-                </div>
+                <img src="111.png" alt="Romoss R&D Center" loading="lazy" decoding="async" width="500" height="350">
             </div>
         </div>
     </section>
 
-    <section class="timeline">
+    <section class="specs-section">
         <div class="container">
             <div class="section-title">
-                <h2>Product Evolution</h2>
-                <p>Our journey of innovation</p>
+                <h2>Technical Specifications</h2>
+                <p>Industry-leading performance metrics</p>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2012</div>
-                <div class="timeline-content">
-                    <h3>First Generation</h3>
-                    <p>Launched our first power bank with 5000mAh capacity, pioneering the portable charging market</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2015</div>
-                <div class="timeline-content">
-                    <h3>Fast Charging Era</h3>
-                    <p>Introduced QC2.0 fast charging technology, reducing charging time by 50%</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2018</div>
-                <div class="timeline-content">
-                    <h3>Wireless Revolution</h3>
-                    <p>Launched first wireless power bank with Qi certification</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2021</div>
-                <div class="timeline-content">
-                    <h3>Laptop Charging</h3>
-                    <p>Introduced 65W PD charging, enabling laptop power bank functionality</p>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-year">2024</div>
-                <div class="timeline-content">
-                    <h3>Next Generation</h3>
-                    <p>100W ultra-fast charging with AI-powered smart management</p>
-                </div>
+            <div class="specs-grid">
+                <div class="spec-item"><h4>200+</h4><p>Patents</p></div>
+                <div class="spec-item"><h4>99%</h4><p>Charging Efficiency</p></div>
+                <div class="spec-item"><h4>65W</h4><p>Max Output</p></div>
+                <div class="spec-item"><h4>30000mAh</h4><p>Max Capacity</p></div>
+                <div class="spec-item"><h4>5000+</h4><p>Cycle Life</p></div>
+                <div class="spec-item"><h4>-40°C~60°C</h4><p>Operating Temp</p></div>
             </div>
         </div>
     </section>
 
-    <section class="certifications">
+    <section class="certifications-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Global Certifications</h2>
-                <p>Meeting international quality and safety standards</p>
+            <div class="section-title" style="color: white;">
+                <h2>Certifications</h2>
+                <p>Globally recognized quality standards</p>
             </div>
-            <div class="cert-list">
-                <div class="cert-item">
-                    <i class="fas fa-award"></i>
-                    <p>CE Certified</p>
-                </div>
-                <div class="cert-item">
-                    <i class="fas fa-award"></i>
-                    <p>FCC Certified</p>
-                </div>
-                <div class="cert-item">
-                    <i class="fas fa-award"></i>
-                    <p>RoHS Compliant</p>
-                </div>
-                <div class="cert-item">
-                    <i class="fas fa-award"></i>
-                    <p>Qi Certified</p>
-                </div>
-                <div class="cert-item">
-                    <i class="fas fa-award"></i>
-                    <p>ISO 9001</p>
-                </div>
+            <div class="certifications-grid">
+                <div class="cert-item"><i class="fas fa-shield-check"></i><h4>CE Certified</h4></div>
+                <div class="cert-item"><i class="fas fa-shield-check"></i><h4>RoHS Compliant</h4></div>
+                <div class="cert-item"><i class="fas fa-shield-check"></i><h4>FCC Approved</h4></div>
+                <div class="cert-item"><i class="fas fa-shield-check"></i><h4>UL Listed</h4></div>
+                <div class="cert-item"><i class="fas fa-shield-check"></i><h4>ISO 9001</h4></div>
+                <div class="cert-item"><i class="fas fa-shield-check"></i><h4>UN38.3</h4></div>
             </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Romoss</h3>
+                    <p>Romoss is a global leader in mobile charging solutions, dedicated to providing innovative and reliable power banks.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="rd.html">R&D</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="service.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +1-800-ROMOSS</p>
+                    <p><i class="fas fa-envelope"></i> info@romoss.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Romoss Technology Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

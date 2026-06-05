@@ -1,8 +1,8 @@
-# Luomas Power Bank Official Website
+# ROMOSS Power Bank Official Website
 
 ## 🌐 Project Overview
 
-This is the official English website for Luomas Power Bank, a leading global provider of high-quality mobile charging solutions.
+This is the official English website for ROMOSS Power Bank, a leading global provider of high-quality mobile charging solutions.
 
 ### Website Features
 
@@ -17,7 +17,7 @@ This is the official English website for Luomas Power Bank, a leading global pro
 ## 📂 Website Structure
 
 ```
-luomas-en/
+romoss-en/
 ├── index.html          # Homepage - Brand showcase and core features
 ├── products.html       # Our Products - Full product catalog with filtering
 ├── rd.html             # R&D - Technology innovation and patents
@@ -36,7 +36,7 @@ luomas-en/
 
 1. Navigate to the website folder:
    ```
-   d:\luomas\luomas-en\
+   d:\luomas\romoss-en\
    ```
 
 2. Double-click `index.html` to open it in your default browser
@@ -54,7 +54,7 @@ luomas-en/
 
 2. Navigate to the website folder:
    ```powershell
-   cd d:\luomas\luomas-en
+   cd d:\luomas\romoss-en
    ```
 
 3. Start the local server:
@@ -107,8 +107,8 @@ luomas-en/
 1. Click the **+** icon in the top-right corner
 2. Select **"New repository"**
 3. Fill in the repository details:
-   - **Repository name**: `luomas-website` (or any name you prefer)
-   - **Description**: `Luomas Power Bank Official Website`
+   - **Repository name**: `romoss-website` (or any name you prefer)
+   - **Description**: `ROMOSS Power Bank Official Website`
    - **Public/Private**: Select **Public** (required for GitHub Pages)
    - **Initialize with README**: Uncheck this box
 4. Click **"Create repository"**
@@ -120,7 +120,7 @@ luomas-en/
 #### Option A: Using GitHub Web Interface (Easier)
 
 1. In your new repository, click **"uploading an existing file"**
-2. Drag and drop all HTML files from `d:\luomas\luomas-en\`:
+2. Drag and drop all HTML files from `d:\luomas\romoss-en\`:
    - `index.html`
    - `products.html`
    - `rd.html`
@@ -136,7 +136,7 @@ luomas-en/
 
 1. Open PowerShell in the website folder:
    ```powershell
-   cd d:\luomas\luomas-en
+   cd d:\luomas\romoss-en
    ```
 
 2. Initialize Git repository:
@@ -156,7 +156,7 @@ luomas-en/
 
 5. Add remote repository (replace with your URL):
    ```powershell
-   git remote add origin https://github.com/YOUR_USERNAME/luomas-website.git
+   git remote add origin https://github.com/YOUR_USERNAME/romoss-website.git
    ```
 
 6. Push to GitHub:
@@ -184,12 +184,12 @@ luomas-en/
 1. Wait 1-2 minutes for deployment to complete
 2. Your website will be available at:
    ```
-   https://YOUR_USERNAME.github.io/luomas-website/
+   https://YOUR_USERNAME.github.io/romoss-website/
    ```
 
 **Example:** If your GitHub username is `johnsmith`, your URL will be:
 ```
-https://johnsmith.github.io/luomas-website/
+https://johnsmith.github.io/romoss-website/
 ```
 
 3. You can now share this URL with anyone!
@@ -297,15 +297,15 @@ Edit `products.html` to update product details:
 ## 📞 Support
 
 For questions or issues:
-- Email: support@luomas.com
-- Phone: +1-800-LUOMAS
-- Live Chat: www.luomas.com/chat
+- Email: support@romoss.com
+- Phone: +1-800-ROMOSS
+- Live Chat: www.romoss.com/chat
 
 ---
 
 ## 📄 License
 
-© 2024 Luomas Technology Co., Ltd. All rights reserved.
+© 2024 ROMOSS Technology Co., Ltd. All rights reserved.
 
 ---
 

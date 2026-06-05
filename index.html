@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luomas Power Bank - Power Your Digital Life</title>
-    <meta name="description" content="Luomas is a leading global provider of high-quality mobile power banks. Reliable, fast-charging, and innovative portable charging solutions.">
+    <title>Romoss Power Bank - Power Your Digital Life</title>
+    <meta name="description" content="Romoss is a leading global provider of high-quality mobile power banks. Reliable, fast-charging, and innovative portable charging solutions.">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        
+
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -21,15 +22,15 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         .logo { display: flex; align-items: center; gap: 12px; }
         .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
+
         nav { display: flex; justify-content: space-between; align-items: center; }
         .nav-links { display: flex; list-style: none; gap: 8px; }
         .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
         .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
-        
+
         .hero {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             color: white;
@@ -38,7 +39,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .hero::before {
             content: '';
             position: absolute;
@@ -46,15 +47,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://neeko-copilot.bytedance.net/api/text2image?prompt=modern%20power%20bank%20product%20photography%20dark%20background%20dramatic%20lighting%20tech%20gadget&image_size=landscape_16_9') center/cover;
-            opacity: 0.15;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(6, 182, 212, 0.1));
         }
-        
+
         .hero-content { position: relative; z-index: 1; }
         .hero h1 { font-size: 56px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; }
         .hero h1 span { background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .hero p { font-size: 20px; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
-        
+
         .btn {
             padding: 16px 40px;
             border-radius: 50px;
@@ -65,34 +65,34 @@
             margin: 0 10px;
             font-size: 16px;
         }
-        
+
         .btn-primary {
             background: linear-gradient(135deg, #3b82f6, #06b6d4);
             color: white;
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
-        
+
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5); }
-        
+
         .btn-secondary {
             background: transparent;
             color: white;
             border: 2px solid rgba(255,255,255,0.3);
         }
-        
+
         .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; }
-        
+
         .features { padding: 100px 0; background: white; }
         .section-title { text-align: center; margin-bottom: 70px; }
         .section-title h2 { font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
         .section-title p { color: #64748b; font-size: 18px; }
-        
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
-        
+
         .feature-card {
             text-align: center;
             padding: 50px 30px;
@@ -101,7 +101,7 @@
             transition: all 0.3s;
             border: 1px solid #e2e8f0;
         }
-        
+
         .feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: #3b82f6; }
         .feature-icon {
             width: 80px;
@@ -117,14 +117,14 @@
         }
         .feature-card h3 { font-size: 22px; margin-bottom: 15px; color: #0f172a; }
         .feature-card p { color: #64748b; font-size: 15px; line-height: 1.7; }
-        
+
         .products-preview { padding: 100px 0; background: #f8fafc; }
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
-        
+
         .product-card {
             background: white;
             border-radius: 24px;
@@ -132,59 +132,59 @@
             transition: all 0.3s;
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-        
+
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .product-card img { width: 100%; height: 280px; object-fit: cover; }
+        .product-card img { width: 100%; height: 280px; object-fit: cover; background: #f1f5f9; }
         .product-info { padding: 30px; }
         .product-info h3 { font-size: 24px; margin-bottom: 12px; color: #0f172a; }
         .product-info p { color: #64748b; font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
         .product-price { font-size: 32px; font-weight: 700; color: #3b82f6; }
-        
+
         .stats {
             background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
             padding: 100px 0;
         }
-        
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 50px;
             text-align: center;
         }
-        
+
         .stat-item h3 { font-size: 56px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
         .stat-item p { color: rgba(255,255,255,0.7); font-size: 16px; }
-        
+
         .cta-section {
             padding: 100px 0;
             background: linear-gradient(135deg, #3b82f6, #06b6d4);
             color: white;
             text-align: center;
         }
-        
+
         .cta-section h2 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
         .cta-section p { font-size: 18px; opacity: 0.9; margin-bottom: 40px; }
-        
+
         .cta-section .btn {
             background: white;
             color: #3b82f6;
             margin: 0 10px;
         }
-        
+
         footer {
             background: #0f172a;
             color: white;
             padding: 80px 0 30px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 50px;
             margin-bottom: 60px;
         }
-        
+
         .footer-section h3 { color: #3b82f6; margin-bottom: 25px; font-size: 20px; }
         .footer-section ul { list-style: none; }
         .footer-section ul li { margin-bottom: 12px; }
@@ -197,13 +197,13 @@
             color: rgba(255,255,255,0.5);
             font-size: 14px;
         }
-        
+
         .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-        
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 36px; }
-            .nav-links { 
-                display: none; 
+            .nav-links {
+                display: none;
                 position: fixed;
                 top: 70px;
                 left: 0;
@@ -225,7 +225,7 @@
         <nav class="container">
             <div class="logo">
                 <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
-                <span>LUOMAS</span>
+                <span>ROMOSS</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -244,7 +244,7 @@
     <section class="hero">
         <div class="container hero-content">
             <h1>Power Your <span>Digital Life</span></h1>
-            <p>Luomas Power Bank - Reliable, Fast-Charging, and Innovative Portable Charging Solutions for Your Everyday Needs</p>
+            <p>Romoss Power Bank - Reliable, Fast-Charging, and Innovative Portable Charging Solutions for Your Everyday Needs</p>
             <div>
                 <a href="products.html" class="btn btn-primary">Explore Products</a>
                 <a href="company.html" class="btn btn-secondary">Learn More</a>
@@ -255,7 +255,7 @@
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>Why Choose Luomas?</h2>
+                <h2>Why Choose Romoss?</h2>
                 <p>Advanced technology meets exceptional quality</p>
             </div>
             <div class="features-grid">
@@ -291,7 +291,7 @@
             </div>
             <div class="products-grid">
                 <div class="product-card">
-                    <img src="1.jpg" alt="Luomas Power Bank 1">
+                    <img src="1.jpg" alt="Romoss Sense6+ 20000mAh Power Bank" loading="lazy" decoding="async" width="400" height="280">
                     <div class="product-info">
                         <h3>Sense6+ 20000mAh</h3>
                         <p>Classic high-capacity with 3 USB outputs, perfect for travelers and heavy users</p>
@@ -299,7 +299,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="2.jpg" alt="Luomas Power Bank 2">
+                    <img src="2.jpg" alt="Romoss Ares10 10000mAh Power Bank" loading="lazy" decoding="async" width="400" height="280">
                     <div class="product-info">
                         <h3>Ares10 10000mAh</h3>
                         <p>Slim & portable with PD fast charging, ideal for daily commuters</p>
@@ -307,7 +307,7 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <img src="3.jpg" alt="Luomas Power Bank 3">
+                    <img src="3.jpg" alt="Romoss PEA30 30000mAh Power Bank" loading="lazy" decoding="async" width="400" height="280">
                     <div class="product-info">
                         <h3>PEA30 30000mAh</h3>
                         <p>Ultra-high capacity with 65W output, charges laptops and multiple devices</p>
@@ -341,8 +341,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>About Luomas</h3>
-                    <p>Luomas is a global leader in mobile charging solutions, dedicated to providing innovative and reliable power banks for the modern digital lifestyle.</p>
+                    <h3>About Romoss</h3>
+                    <p>Romoss is a global leader in mobile charging solutions, dedicated to providing innovative and reliable power banks for the modern digital lifestyle.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
@@ -364,13 +364,13 @@
                 </div>
                 <div class="footer-section">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-phone"></i> +1-800-LUOMAS</p>
-                    <p><i class="fas fa-envelope"></i> info@luomas.com</p>
+                    <p><i class="fas fa-phone"></i> +1-800-ROMOSS</p>
+                    <p><i class="fas fa-envelope"></i> info@romoss.com</p>
                     <p><i class="fas fa-map-marker"></i> Shenzhen, China</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+                <p>&copy; 2024 Romoss Technology Co., Ltd. All rights reserved.</p>
             </div>
         </div>
     </footer>

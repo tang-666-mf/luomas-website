@@ -1,10 +1,10 @@
-# 🚀 Quick Start Guide - Luomas Website
+# 🚀 Quick Start Guide - ROMOSS Website
 
 ## 📍 Local Access (立即访问)
 
 ### 方法 1: 直接打开文件 (最简单)
 
-1. 打开文件夹: `d:\luomas\luomas-en\`
+1. 打开文件夹: `d:\luomas\romoss-en\`
 2. 双击 `index.html` 文件
 3. 网站将在浏览器中打开
 
@@ -15,7 +15,7 @@
 在 PowerShell 中运行:
 
 ```powershell
-cd d:\luomas\luomas-en
+cd d:\luomas\romoss-en
 python -m http.server 8000
 ```
 
@@ -40,8 +40,8 @@ python -m http.server 8000
 1. 点击右上角 **+** 图标
 2. 选择 **"New repository"**
 3. 填写信息:
-   - **仓库名**: `luomas-website`
-   - **描述**: `Luomas Power Bank Official Website`
+   - **仓库名**: `romoss-website`
+   - **描述**: `ROMOSS Power Bank Official Website`
    - **权限**: 选择 **Public** (必须)
 4. 点击 **"Create repository"**
 
@@ -67,11 +67,11 @@ python -m http.server 8000
 **方法 B: Git 命令行 (高级)**
 
 ```powershell
-cd d:\luomas\luomas-en
+cd d:\luomas\romoss-en
 git init
 git add .
 git commit -m "Initial website upload"
-git remote add origin https://github.com/YOUR_USERNAME/luomas-website.git
+git remote add origin https://github.com/YOUR_USERNAME/romoss-website.git
 git branch -M main
 git push -u origin main
 ```
@@ -95,12 +95,12 @@ git push -u origin main
 等待 1-2 分钟后，访问:
 
 ```
-https://YOUR_USERNAME.github.io/luomas-website/
+https://YOUR_USERNAME.github.io/romoss-website/
 ```
 
 **示例:** 如果用户名是 `johnsmith`，URL 就是:
 ```
-https://johnsmith.github.io/luomas-website/
+https://johnsmith.github.io/romoss-website/
 ```
 
 ✅ 现在任何人都可以通过这个URL访问您的网站了！
@@ -209,9 +209,9 @@ A: 确保浏览器中已启用 JavaScript。
 
 ## 📞 技术支持
 
-- 📧 Email: support@luomas.com
-- 📞 Phone: +1-800-LUOMAS
-- 💬 Live Chat: www.luomas.com/chat
+- 📧 Email: support@romoss.com
+- 📞 Phone: +1-800-ROMOSS
+- 💬 Live Chat: www.romoss.com/chat
 
 ---
 

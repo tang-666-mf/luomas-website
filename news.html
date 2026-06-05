@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News & Events - Luomas Power Bank</title>
+    <title>News - Romoss Power Bank</title>
+    <meta name="description" content="Latest news, events, and updates from Romoss Technology">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        
+
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -20,104 +22,149 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         .logo { display: flex; align-items: center; gap: 12px; }
         .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
+
         nav { display: flex; justify-content: space-between; align-items: center; }
         .nav-links { display: flex; list-style: none; gap: 8px; }
         .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
         .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
-        
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+        .page-title {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            padding: 180px 0 100px;
+            padding: 140px 0 60px;
             text-align: center;
         }
-        
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
-        .hero p { font-size: 18px; opacity: 0.9; }
-        
-        .news-section { padding: 100px 0; }
-        .section-title { text-align: center; margin-bottom: 70px; }
-        .section-title h2 { font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
-        .section-title p { color: #64748b; font-size: 18px; }
-        
+
+        .page-title h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-title p { font-size: 18px; opacity: 0.8; }
+
+        .news-section { padding: 80px 0; background: white; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; color: #0f172a; margin-bottom: 15px; }
+        .section-title p { color: #64748b; font-size: 16px; }
+
         .news-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 35px;
         }
-        
+
         .news-card {
-            background: white;
-            border-radius: 24px;
+            background: #f8fafc;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             transition: all 0.3s;
+            border: 1px solid #e2e8f0;
         }
-        
-        .news-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+
+        .news-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
         .news-card img { width: 100%; height: 250px; object-fit: cover; }
-        .news-info { padding: 35px; }
-        .news-info .category { display: inline-block; padding: 6px 16px; background: #dbeafe; color: #3b82f6; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
-        .news-info .date { color: #94a3b8; font-size: 14px; margin-bottom: 10px; display: block; }
-        .news-info h3 { font-size: 24px; margin-bottom: 15px; color: #0f172a; }
-        .news-info p { color: #64748b; font-size: 15px; margin-bottom: 20px; line-height: 1.7; }
+        .news-content { padding: 30px; }
+        .news-date {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .news-content h3 { font-size: 22px; margin-bottom: 12px; color: #0f172a; }
+        .news-content p { color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 20px; }
         .read-more {
             color: #3b82f6;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
+            transition: gap 0.3s;
         }
-        .read-more:hover { gap: 12px; }
-        
-        .events-section { padding: 100px 0; background: white; }
+
+        .read-more:hover { gap: 10px; }
+
+        .events-section { padding: 80px 0; background: #f8fafc; }
         .events-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
         }
-        
+
         .event-card {
-            background: #f8fafc;
-            padding: 40px;
-            border-radius: 24px;
-            border-left: 5px solid #3b82f6;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
         }
-        
+
+        .event-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
         .event-date {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #3b82f6;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: white;
-            border-radius: 12px;
-            font-weight: 700;
-            margin-bottom: 20px;
         }
-        
-        .event-card h3 { font-size: 24px; margin-bottom: 15px; color: #0f172a; }
-        .event-card p { color: #64748b; margin-bottom: 15px; }
-        .event-card .location { color: #94a3b8; font-size: 14px; }
-        .event-card .location i { margin-right: 8px; }
-        
+
+        .event-date .month { font-size: 14px; font-weight: 500; }
+        .event-date .day { font-size: 28px; font-weight: 700; }
+        .event-card h3 { font-size: 20px; margin-bottom: 12px; color: #0f172a; }
+        .event-card p { color: #64748b; font-size: 14px; margin-bottom: 15px; }
+        .event-location { color: #3b82f6; font-size: 14px; font-weight: 500; }
+
         footer {
             background: #0f172a;
             color: white;
-            padding: 60px 0 30px;
-            text-align: center;
+            padding: 80px 0 30px;
         }
-        
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 { color: #3b82f6; margin-bottom: 25px; font-size: 20px; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 12px; }
+        .footer-section ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: #3b82f6; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
         .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-        
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
+            .page-title h1 { font-size: 36px; }
             .news-grid { grid-template-columns: 1fr; }
-            .events-grid { grid-template-columns: 1fr; }
-            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #0f172a; flex-direction: column; padding: 20px; gap: 10px; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
             .nav-links.active { display: flex; }
             .nav-links a { padding: 12px 20px; text-align: center; }
             .mobile-menu-btn { display: block; }
@@ -129,7 +176,7 @@
         <nav class="container">
             <div class="logo">
                 <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
-                <span>LUOMAS</span>
+                <span>ROMOSS</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -145,49 +192,44 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="page-title">
         <div class="container">
-            <h1>News & Events</h1>
-            <p>Stay updated with the latest from Luomas</p>
+            <h1>Latest News</h1>
+            <p>Stay updated with Romoss news and events</p>
         </div>
     </section>
 
     <section class="news-section">
         <div class="container">
             <div class="section-title">
-                <h2>Latest News</h2>
-                <p>Breaking stories and company updates</p>
+                <h2>News & Updates</h2>
+                <p>Latest announcements and company news</p>
             </div>
             <div class="news-grid">
                 <div class="news-card">
-                    <img src="1111.png" alt="New Product Launch">
-                    <div class="news-info">
-                        <span class="category">Product Launch</span>
-                        <span class="date">January 15, 2024</span>
-                        <h3>Luomas Launches Revolutionary 100W Power Bank</h3>
-                        <p>Introducing our most powerful power bank yet, featuring ultra-fast charging technology and AI-powered smart management system.</p>
+                    <img src="1111.png" alt="Romoss New Product Launch" loading="lazy" decoding="async" width="400" height="250">
+                    <div class="news-content">
+                        <span class="news-date">January 15, 2024</span>
+                        <h3>Romoss Unveils New Ultra-Fast Charging Power Bank Series</h3>
+                        <p>Introducing our latest innovation - the Zeus Pro series with 100W fast charging capability, revolutionizing portable power solutions.</p>
                         <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
                 <div class="news-card">
-                    <img src="2222.png" alt="Partnership">
-                    <div class="news-info">
-                        <span class="category">Partnership</span>
-                        <span class="date">December 28, 2023</span>
-                        <h3>Luomas Partners with Major Retailer in Europe</h3>
-                        <p>Strategic partnership expands Luomas presence across 12 European countries, making products more accessible to customers.</p>
+                    <img src="2222.png" alt="Romoss at CES 2024" loading="lazy" decoding="async" width="400" height="250">
+                    <div class="news-content">
+                        <span class="news-date">January 10, 2024</span>
+                        <h3>Romoss Showcases Innovation at CES 2024</h3>
+                        <p>Visit us at CES 2024 in Las Vegas to experience our cutting-edge charging technology and new product lineup.</p>
                         <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-
                 <div class="news-card">
-                    <img src="3333.png" alt="Award">
-                    <div class="news-info">
-                        <span class="category">Award</span>
-                        <span class="date">December 10, 2023</span>
-                        <h3>Luomas Wins Best Innovation Award at CES 2024</h3>
-                        <p>Our wireless charging technology recognized for excellence in innovation and design at the world's largest tech show.</p>
+                    <img src="3333.png" alt="Romoss Sustainability Initiative" loading="lazy" decoding="async" width="400" height="250">
+                    <div class="news-content">
+                        <span class="news-date">December 20, 2023</span>
+                        <h3>Romoss Commits to Carbon Neutrality by 2030</h3>
+                        <p>We're taking bold steps towards environmental sustainability with our new green manufacturing initiatives.</p>
                         <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -199,75 +241,35 @@
         <div class="container">
             <div class="section-title">
                 <h2>Upcoming Events</h2>
-                <p>Join us at industry events and exhibitions</p>
+                <p>Join us at upcoming exhibitions and trade shows</p>
             </div>
             <div class="events-grid">
                 <div class="event-card">
-                    <div class="event-date">Feb 15-18, 2024</div>
-                    <h3>Mobile World Congress (MWC)</h3>
-                    <p>Visit Luomas at Booth 3B42 to experience our latest products and technologies firsthand.</p>
-                    <div class="location"><i class="fas fa-map-marker-alt"></i> Barcelona, Spain</div>
+                    <div class="event-date">
+                        <div class="month">FEB</div>
+                        <div class="day">15</div>
+                    </div>
+                    <h3>MWC Barcelona 2024</h3>
+                    <p>Mobile World Congress</p>
+                    <div class="event-location">Barcelona, Spain</div>
                 </div>
-
                 <div class="event-card">
-                    <div class="event-date">Mar 5-8, 2024</div>
-                    <h3>IFA Berlin</h3>
-                    <p>Showcasing our newest innovations in mobile charging technology at Europe's leading consumer electronics show.</p>
-                    <div class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</div>
-                </div>
-
-                <div class="event-card">
-                    <div class="event-date">Apr 10-12, 2024</div>
+                    <div class="event-date">
+                        <div class="month">MAR</div>
+                        <div class="day">20</div>
+                    </div>
                     <h3>Hong Kong Electronics Fair</h3>
-                    <p>Connecting with global partners and showcasing our comprehensive product lineup.</p>
-                    <div class="location"><i class="fas fa-map-marker-alt"></i> Hong Kong</div>
+                    <p>Spring Edition</p>
+                    <div class="event-location">Hong Kong</div>
                 </div>
-
                 <div class="event-card">
-                    <div class="event-date">May 20-23, 2024</div>
-                    <h3>Computex Taipei</h3>
-                    <p>Presenting cutting-edge charging solutions for laptops and mobile devices at Asia's premier tech event.</p>
-                    <div class="location"><i class="fas fa-map-marker-alt"></i> Taipei, Taiwan</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="news-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Press Releases</h2>
-                <p>Official announcements and media coverage</p>
-            </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-info">
-                        <span class="category">Press Release</span>
-                        <span class="date">January 5, 2024</span>
-                        <h3>Luomas Reports Record Sales in 2023</h3>
-                        <p>Company achieves 45% year-over-year growth, driven by strong demand for high-capacity power banks.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    <div class="event-date">
+                        <div class="month">APR</div>
+                        <div class="day">10</div>
                     </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-info">
-                        <span class="category">Press Release</span>
-                        <span class="date">December 20, 2023</span>
-                        <h3>Luomas Expands Manufacturing Capacity</h3>
-                        <p>New production facility in Vietnam increases capacity by 200% to meet growing global demand.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <div class="news-card">
-                    <div class="news-info">
-                        <span class="category">Press Release</span>
-                        <span class="date">November 15, 2023</span>
-                        <h3>Luomas Commits to Sustainability</h3>
-                        <p>Announces initiative to use 100% recycled materials in packaging by 2025.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    <h3>Computex Taipei 2024</h3>
+                    <p>Asia's largest tech exhibition</p>
+                    <div class="event-location">Taipei, Taiwan</div>
                 </div>
             </div>
         </div>
@@ -275,7 +277,37 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Romoss</h3>
+                    <p>Romoss is a global leader in mobile charging solutions, dedicated to providing innovative and reliable power banks.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="rd.html">R&D</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="service.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +1-800-ROMOSS</p>
+                    <p><i class="fas fa-envelope"></i> info@romoss.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Romoss Technology Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

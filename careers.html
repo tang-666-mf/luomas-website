@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us - Luomas Power Bank</title>
+    <title>Careers - Romoss Power Bank</title>
+    <meta name="description" content="Join Romoss team - exciting career opportunities in technology and innovation">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; background: #f8fafc; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
-        
+
         header {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
@@ -20,141 +22,161 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
-        
+
         .logo { display: flex; align-items: center; gap: 12px; }
         .logo span { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, #3b82f6, #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
+
         nav { display: flex; justify-content: space-between; align-items: center; }
         .nav-links { display: flex; list-style: none; gap: 8px; }
         .nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-weight: 500; padding: 8px 16px; border-radius: 8px; transition: all 0.3s; font-size: 14px; }
         .nav-links a:hover, .nav-links a.active { color: white; background: rgba(59, 130, 246, 0.2); }
-        
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+
+        .page-title {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
             color: white;
-            padding: 180px 0 100px;
+            padding: 140px 0 60px;
             text-align: center;
         }
-        
-        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
-        .hero p { font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
-        
-        .btn {
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
-            font-size: 16px;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6, #06b6d4);
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-        
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5); }
-        
-        .culture-section { padding: 100px 0; }
-        .section-title { text-align: center; margin-bottom: 70px; }
-        .section-title h2 { font-size: 42px; font-weight: 700; margin-bottom: 15px; color: #0f172a; }
-        .section-title p { color: #64748b; font-size: 18px; }
-        
-        .culture-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 100px;
-        }
-        
-        .culture-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 24px;
-            text-align: center;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-        }
-        
-        .culture-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .culture-card i { font-size: 56px; color: #3b82f6; margin-bottom: 25px; }
-        .culture-card h3 { font-size: 24px; margin-bottom: 15px; color: #0f172a; }
-        .culture-card p { color: #64748b; font-size: 15px; line-height: 1.7; }
-        
-        .benefits { padding: 100px 0; background: white; }
+
+        .page-title h1 { font-size: 48px; margin-bottom: 15px; }
+        .page-title p { font-size: 18px; opacity: 0.8; }
+
+        .intro-section { padding: 80px 0; background: white; text-align: center; }
+        .intro-section h2 { font-size: 32px; margin-bottom: 20px; color: #0f172a; }
+        .intro-section p { color: #64748b; font-size: 16px; line-height: 1.7; max-width: 800px; margin: 0 auto; }
+
+        .benefits-section { padding: 80px 0; background: #f8fafc; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 36px; font-weight: 700; color: #0f172a; margin-bottom: 15px; }
+        .section-title p { color: #64748b; font-size: 16px; }
+
         .benefits-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
         }
-        
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 30px;
-            background: #f8fafc;
-            border-radius: 16px;
-        }
-        
-        .benefit-item i { font-size: 32px; color: #3b82f6; }
-        .benefit-item h3 { font-size: 20px; margin-bottom: 8px; color: #0f172a; }
-        .benefit-item p { color: #64748b; font-size: 14px; }
-        
-        .jobs-section { padding: 100px 0; }
-        .jobs-grid {
-            display: grid;
-            gap: 30px;
-        }
-        
-        .job-card {
+
+        .benefit-card {
             background: white;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
             transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .benefit-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+        }
+
+        .benefit-card h3 { font-size: 20px; margin-bottom: 12px; color: #0f172a; }
+        .benefit-card p { color: #64748b; font-size: 14px; line-height: 1.6; }
+
+        .jobs-section { padding: 80px 0; background: white; }
+        .jobs-list { max-width: 800px; margin: 0 auto; }
+
+        .job-card {
+            background: #f8fafc;
+            padding: 35px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .job-card:hover { transform: translateX(5px); border-color: #3b82f6; }
+        .job-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 15px;
         }
-        
-        .job-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .job-info h3 { font-size: 24px; margin-bottom: 10px; color: #0f172a; }
-        .job-info .location { color: #64748b; margin-bottom: 15px; }
-        .job-info .location i { margin-right: 8px; }
-        .job-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-        .job-tag { padding: 6px 16px; background: #dbeafe; color: #3b82f6; border-radius: 20px; font-size: 12px; font-weight: 600; }
-        
+
+        .job-header h3 { font-size: 22px; color: #0f172a; }
+        .job-location {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: #3b82f6;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .job-card p { color: #64748b; font-size: 15px; margin-bottom: 20px; }
+        .job-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+        .job-tag {
+            background: #e2e8f0;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            color: #64748b;
+        }
+
         .apply-btn {
-            padding: 14px 32px;
             background: linear-gradient(135deg, #3b82f6, #06b6d4);
             color: white;
             border: none;
-            border-radius: 12px;
-            font-size: 16px;
+            padding: 12px 30px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
         }
-        
-        .apply-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
-        
+
+        .apply-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(59, 130, 246, 0.4); }
+
         footer {
             background: #0f172a;
             color: white;
-            padding: 60px 0 30px;
-            text-align: center;
+            padding: 80px 0 30px;
         }
-        
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-section h3 { color: #3b82f6; margin-bottom: 25px; font-size: 20px; }
+        .footer-section ul { list-style: none; }
+        .footer-section ul li { margin-bottom: 12px; }
+        .footer-section ul li a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s; }
+        .footer-section ul li a:hover { color: #3b82f6; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 14px;
+        }
+
         .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
-        
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 32px; }
-            .job-card { flex-direction: column; text-align: left; gap: 20px; }
-            .job-tags { justify-content: flex-start; }
-            .nav-links { display: none; position: fixed; top: 70px; left: 0; right: 0; background: #0f172a; flex-direction: column; padding: 20px; gap: 10px; }
+            .page-title h1 { font-size: 36px; }
+            .job-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #0f172a;
+                flex-direction: column;
+                padding: 20px;
+                gap: 10px;
+            }
             .nav-links.active { display: flex; }
             .nav-links a { padding: 12px 20px; text-align: center; }
             .mobile-menu-btn { display: block; }
@@ -166,7 +188,7 @@
         <nav class="container">
             <div class="logo">
                 <i class="fas fa-bolt" style="font-size: 32px; color: #3b82f6;"></i>
-                <span>LUOMAS</span>
+                <span>ROMOSS</span>
             </div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
@@ -182,179 +204,117 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="page-title">
         <div class="container">
-            <h1>Join Our Team</h1>
-            <p>Build the future of mobile charging with innovative minds from around the world</p>
-            <a href="#openings" class="btn btn-primary">View Open Positions</a>
+            <h1>Careers at Romoss</h1>
+            <p>Join our team and shape the future of mobile charging technology</p>
         </div>
     </section>
 
-    <section class="culture-section">
+    <section class="intro-section">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Culture</h2>
-                <p>What makes Luomas a great place to work</p>
-            </div>
-            <div class="culture-grid">
-                <div class="culture-card">
-                    <i class="fas fa-lightbulb"></i>
-                    <h3>Innovation First</h3>
-                    <p>We encourage creative thinking and reward innovative ideas. Every team member has the opportunity to shape our products and processes.</p>
-                </div>
-                <div class="culture-card">
-                    <i class="fas fa-users"></i>
-                    <h3>Collaborative Spirit</h3>
-                    <p>We believe in the power of teamwork. Cross-functional collaboration is at the heart of everything we do.</p>
-                </div>
-                <div class="culture-card">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Growth Mindset</h3>
-                    <p>We invest in our people's growth through continuous learning opportunities and career development programs.</p>
-                </div>
-                <div class="culture-card">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Work-Life Balance</h3>
-                    <p>We respect personal time and offer flexible working arrangements to help you maintain a healthy work-life balance.</p>
-                </div>
-            </div>
+            <h2>Build Your Career with Romoss</h2>
+            <p>At Romoss, we believe in empowering innovation and fostering growth. We're always looking for talented individuals who share our passion for technology and excellence. Join us in creating the future of portable power solutions.</p>
         </div>
     </section>
 
-    <section class="benefits">
+    <section class="benefits-section">
         <div class="container">
             <div class="section-title">
-                <h2>Benefits & Perks</h2>
-                <p>Comprehensive benefits package for our employees</p>
+                <h2>Why Work With Us</h2>
+                <p>Benefits of joining the Romoss team</p>
             </div>
             <div class="benefits-grid">
-                <div class="benefit-item">
-                    <i class="fas fa-heartbeat"></i>
-                    <div>
-                        <h3>Health Insurance</h3>
-                        <p>Comprehensive medical, dental, and vision coverage</p>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Career Growth</h3>
+                    <p>Opportunities for advancement and professional development</p>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-plane"></i>
-                    <div>
-                        <h3>Paid Time Off</h3>
-                        <p>20 days annual leave plus public holidays</p>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                    <h3>Great Team</h3>
+                    <p>Collaborative and innovative work environment</p>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <div>
-                        <h3>Learning Budget</h3>
-                        <p>$2,000 annual allowance for professional development</p>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-award"></i></div>
+                    <h3>Competitive Salary</h3>
+                    <p>Attractive compensation packages and bonuses</p>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-home"></i>
-                    <div>
-                        <h3>Remote Work</h3>
-                        <p>Flexible remote work options up to 3 days per week</p>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Health Benefits</h3>
+                    <p>Comprehensive health insurance and wellness programs</p>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-chart-line"></i>
-                    <div>
-                        <h3>Stock Options</h3>
-                        <p>Competitive equity package for all employees</p>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-calendar"></i></div>
+                    <h3>Flexible Hours</h3>
+                    <p>Flexible work arrangements and paid time off</p>
                 </div>
-                <div class="benefit-item">
-                    <i class="fas fa-gift"></i>
-                    <div>
-                        <h3>Product Discounts</h3>
-                        <p>50% discount on all Luomas products</p>
-                    </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovation</h3>
+                    <p>Work on cutting-edge technology and products</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="jobs-section" id="openings">
+    <section class="jobs-section">
         <div class="container">
             <div class="section-title">
                 <h2>Open Positions</h2>
-                <p>Find your perfect role at Luomas</p>
+                <p>Current job openings at Romoss</p>
             </div>
-            <div class="jobs-grid">
+            <div class="jobs-list">
                 <div class="job-card">
-                    <div class="job-info">
+                    <div class="job-header">
                         <h3>Senior Software Engineer</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Shenzhen, China</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full-time</span>
-                            <span class="job-tag">Engineering</span>
-                            <span class="job-tag">5+ years</span>
-                        </div>
+                        <span class="job-location">Shenzhen, China</span>
+                    </div>
+                    <p>We're looking for an experienced software engineer to join our R&D team. You'll develop firmware and software solutions for our power bank products.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">C/C++</span>
+                        <span class="job-tag">Embedded Systems</span>
+                        <span class="job-tag">Firmware</span>
                     </div>
                     <button class="apply-btn">Apply Now</button>
                 </div>
-
                 <div class="job-card">
-                    <div class="job-info">
-                        <h3>Product Designer</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full-time</span>
-                            <span class="job-tag">Design</span>
-                            <span class="job-tag">3+ years</span>
-                        </div>
+                    <div class="job-header">
+                        <h3>Product Manager</h3>
+                        <span class="job-location">Shenzhen, China</span>
+                    </div>
+                    <p>Lead product development from concept to launch. Work with cross-functional teams to deliver innovative power bank solutions.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">Product Strategy</span>
+                        <span class="job-tag">Market Research</span>
+                        <span class="job-tag">Project Management</span>
                     </div>
                     <button class="apply-btn">Apply Now</button>
                 </div>
-
                 <div class="job-card">
-                    <div class="job-info">
-                        <h3>Marketing Manager</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Berlin, Germany</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full-time</span>
-                            <span class="job-tag">Marketing</span>
-                            <span class="job-tag">4+ years</span>
-                        </div>
+                    <div class="job-header">
+                        <h3>Quality Assurance Engineer</h3>
+                        <span class="job-location">Shenzhen, China</span>
+                    </div>
+                    <p>Ensure product quality through testing and validation. Develop test plans and implement quality control processes.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">Testing</span>
+                        <span class="job-tag">Quality Control</span>
+                        <span class="job-tag">ISO 9001</span>
                     </div>
                     <button class="apply-btn">Apply Now</button>
                 </div>
-
                 <div class="job-card">
-                    <div class="job-info">
-                        <h3>Data Scientist</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Shenzhen, China</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full-time</span>
-                            <span class="job-tag">Data</span>
-                            <span class="job-tag">3+ years</span>
-                        </div>
+                    <div class="job-header">
+                        <h3>Marketing Specialist</h3>
+                        <span class="job-location">Shenzhen, China</span>
                     </div>
-                    <button class="apply-btn">Apply Now</button>
-                </div>
-
-                <div class="job-card">
-                    <div class="job-info">
-                        <h3>Customer Success Specialist</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Remote</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full-time</span>
-                            <span class="job-tag">Support</span>
-                            <span class="job-tag">2+ years</span>
-                        </div>
-                    </div>
-                    <button class="apply-btn">Apply Now</button>
-                </div>
-
-                <div class="job-card">
-                    <div class="job-info">
-                        <h3>Supply Chain Manager</h3>
-                        <div class="location"><i class="fas fa-map-marker-alt"></i> Shenzhen, China</div>
-                        <div class="job-tags">
-                            <span class="job-tag">Full-time</span>
-                            <span class="job-tag">Operations</span>
-                            <span class="job-tag">5+ years</span>
-                        </div>
+                    <p>Develop and execute marketing strategies to promote Romoss products globally. Manage digital marketing campaigns and brand initiatives.</p>
+                    <div class="job-tags">
+                        <span class="job-tag">Digital Marketing</span>
+                        <span class="job-tag">Brand Management</span>
+                        <span class="job-tag">Content Strategy</span>
                     </div>
                     <button class="apply-btn">Apply Now</button>
                 </div>
@@ -364,13 +324,49 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Luomas Technology Co., Ltd. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Romoss</h3>
+                    <p>Romoss is a global leader in mobile charging solutions, dedicated to providing innovative and reliable power banks.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="rd.html">R&D</a></li>
+                        <li><a href="company.html">Company</a></li>
+                        <li><a href="service.html">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="news.html">News & Events</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-phone"></i> +1-800-ROMOSS</p>
+                    <p><i class="fas fa-envelope"></i> info@romoss.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Romoss Technology Co., Ltd. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script>
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        document.querySelectorAll('.apply-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Thank you for your interest! Please send your resume to careers@romoss.com with the job title in the subject line.');
+            });
         });
     </script>
 </body>
